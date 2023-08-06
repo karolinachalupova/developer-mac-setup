@@ -367,6 +367,7 @@ sh -c 'curl -s https://raw.githubusercontent.com/karolinachalupova/developer-mac
 source ~/.kubectl_aliases
 
 beginDeploy "############# SETUP BASH PROFILE #############"
+sh -c 'curl -s https://raw.githubusercontent.com/karolinachalupova/developer-mac-setup/master/.bash_profile >> ~/.bash_profile'
 source ~/.bash_profile
 
 beginDeploy "############# SETUP OH MY ZSH #############"
