@@ -46,43 +46,11 @@ read General
 
 CaskGeneralToolList=(
     google-chrome
-    #firefox
     spotify
 )
 if [ "$General" != "${General#[Yy]}" ] ;then
     echo Yes
     brew install --cask --appdir="/Applications" ${CaskGeneralToolList[@]}
-else
-    echo No
-fi
-
-############# Designer #############
-beginDeploy "############# Designer #############"
-echo -n "Do you wish to install Designer Tools (${bold}${green}y${reset}/${bold}${red}n${reset})? "
-read Designer
-
-CaskDesignerToolList=(
-    adobe-creative-cloud
-)
-if [ "$Designer" != "${Designer#[Yy]}" ] ;then
-    echo Yes
-    brew install --cask --appdir="/Applications" ${CaskDesignerToolList[@]}
-else
-    echo No
-fi
-
-
-############# Mobile Developer #############
-beginDeploy "############# Mobile Developer #############"
-echo -n "Do you wish to install Mobile Developer Tools (${bold}${green}y${reset}/${bold}${red}n${reset})? "
-read MobileDeveloper
-
-CaskMobileDeveloperToolList=(
-    fastlane
-)
-if [ "$MobileDeveloper" != "${MobileDeveloper#[Yy]}" ] ;then
-    echo Yes
-    brew install --cask ${CaskMobileDeveloperToolList[@]}
 else
     echo No
 fi
@@ -93,7 +61,8 @@ echo -n "Do you wish to install Python Developer Tools (${bold}${green}y${reset}
 read PythonDeveloper
 
 PythonDeveloperToolList=(
-    pyenv pyenv-virtualenv
+    pyenv 
+    pyenv-virtualenv
     isort
     python-yq
 )
@@ -132,8 +101,6 @@ CaskDeveloperUtilitiesList=(
     dotnet-sdk
     wireshark
     iterm2
-    # google-chrome-canary
-    # firefox-developer-edition
 )
 if [ "$DeveloperUtilities" != "${DeveloperUtilities#[Yy]}" ] ;then
     
@@ -171,18 +138,12 @@ echo -n "Do you wish to install Database Tools (${bold}${green}y${reset}/${bold}
 read Database
 
 
-DatabaseToolList=(
-    kafkacat
-)
 CaskDatabaseToolList=(
     pgadmin4
-    #studio-3t
-    #graphiql
     azure-data-studio
 )
 if [ "$Database" != "${Database#[Yy]}" ] ;then
     echo Yes
-    brew install ${DatabaseToolList[@]}
     brew install --cask ${CaskDatabaseToolList[@]}
 
 else
@@ -196,9 +157,7 @@ echo -n "Do you wish to install IDEs (${bold}${green}y${reset}/${bold}${red}n${r
 read IDEs
 
 CaskIDEsList=(
-    visual-studio-code
-    #intellij-idea
-    #visual-studio
+    #visual-studio-code
     #android-studio
 )
 if [ "$IDEs" != "${IDEs#[Yy]}" ] ;then
@@ -273,15 +232,14 @@ echo -n "Do you wish to install Productivity Tools (${bold}${green}y${reset}/${b
 read Productivity
 
 CaskProductivityToolList=(
-    slack
+    #slack
     evernote
     the-unarchiver
     dash
     gpg-suite
-    microsoft-teams
+    #microsoft-teams
     microsoft-office
-    bitwarden
-    #zoomus
+    #bitwarden
 )
 if [ "$Productivity" != "${Productivity#[Yy]}" ] ;then
     echo Yes
