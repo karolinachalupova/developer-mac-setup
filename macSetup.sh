@@ -70,6 +70,8 @@ PythonDeveloperToolList=(
 if [ "$PythonDeveloper" != "${PythonDeveloper#[Yy]}" ] ;then
     echo Yes
     brew install ${PythonDeveloperToolList[@]}
+    pyenv install 3.11.4
+    pyenv global 3.11.4
 else
     echo No
 fi
@@ -107,26 +109,6 @@ if [ "$DeveloperUtilities" != "${DeveloperUtilities#[Yy]}" ] ;then
     echo Yes
     brew install ${DeveloperUtilitiesList[@]}
     brew install --cask ${CaskDeveloperUtilitiesList[@]}
-
-
-    mkdir ~/.nvm
-    echo '
-    # NVM CONFIG
-    export NVM_DIR="$HOME/.nvm"
-        [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
-        [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion' >> ~/.bash_profile
-
-
-    echo '
-    # BASH-COMPLETION CONFIG
-    [[ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]] && . "$(brew --prefix)/etc/profile.d/bash_completion.sh"' >> ~/.bash_profile
-
-
-    curl -s "https://get.sdkman.io" | bash
-    echo '
-    # THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-    export SDKMAN_DIR="/Users/mpatel/.sdkman"
-    [[ -s "/Users/mpatel/.sdkman/bin/sdkman-init.sh" ]] && source "${HOME}/.sdkman/bin/sdkman-init.sh"' >> ~/.bash_profile
 else
     echo No
 fi
@@ -253,16 +235,11 @@ beginDeploy "############# Oh my ZSH #############"
 echo -n "Do you wish to install Oh my ZSH (${bold}${green}y${reset}/${bold}${red}n${reset})? "
 read OhMyZsh
 
-OhMyZshToolList=(
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-)
-
 if [ "$OhMyZsh" != "${OhMyZsh#[Yy]}" ] ;then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-    brew install ${OhMyZshToolList[@]}
-    
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting    
 else
     echo No
 fi
