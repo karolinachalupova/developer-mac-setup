@@ -72,6 +72,7 @@ if [ "$PythonDeveloper" != "${PythonDeveloper#[Yy]}" ] ;then
     brew install ${PythonDeveloperToolList[@]}
     pyenv install 3.11.4
     pyenv global 3.11.4
+    brew tap azure/azd && brew install azd
 else
     echo No
 fi
