@@ -254,15 +254,15 @@ echo -n "Do you wish to install Oh my ZSH (${bold}${green}y${reset}/${bold}${red
 read OhMyZsh
 
 OhMyZshToolList=(
-    romkatv/powerlevel10k/powerlevel10k
     zsh-autosuggestions
     zsh-syntax-highlighting
 )
 
 if [ "$OhMyZsh" != "${OhMyZsh#[Yy]}" ] ;then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
     brew install ${OhMyZshToolList[@]}
-    p10k configure
+    
 else
     echo No
 fi
@@ -324,16 +324,13 @@ beginDeploy "############# K8s ALIASES #############"
 sh -c 'curl -s https://raw.githubusercontent.com/karolinachalupova/developer-mac-setup/master/.kubectl_aliases >> ~/.kubectl_aliases'
 source ~/.kubectl_aliases
 
-beginDeploy "############# SETUP BASH PROFILE #############"
-sh -c 'curl -s https://raw.githubusercontent.com/karolinachalupova/developer-mac-setup/master/.bash_profile >> ~/.bash_profile'
-source ~/.bash_profile
-
-beginDeploy "############# SETUP OH MY ZSH #############"
+beginDeploy "############# SETUP ZSH #############"
 sh -c 'curl -s https://raw.githubusercontent.com/karolinachalupova/developer-mac-setup/master/.zshrc >> ~/.zshrc'
-source ~/.zshrc
-
-beginDeploy "############# SETUP POWERLEVEL10k #############"
+sh -c 'curl -s https://raw.githubusercontent.com/karolinachalupova/developer-mac-setup/master/.zprofile >> ~/.zprofile'
 sh -c 'curl -s https://raw.githubusercontent.com/karolinachalupova/developer-mac-setup/master/.p10k.zsh >> ~/.p10k.zsh'
+source ~/.zshrc
+source ~/.zprofile
+
 
 runtime=$((($(date +%s)-$start)/60))
 beginDeploy "############# Total Setup Time ############# $runtime Minutes"
