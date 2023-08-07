@@ -264,7 +264,34 @@ httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grab
 
 
 #   ---------------------------------------
-#   9.  REMINDERS & NOTES
+#   9.  GIT
+#   ---------------------------------------
+alias gs='git status'
+alias glg='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --date=relative'
+alias gu='git pull upstream'
+alias go='git pull origin'
+alias grv='git remote -v'
+
+#   ---------------------------------------
+#   10.  DOCKER
+#   ---------------------------------------
+alias dps='docker ps -a'
+alias di='docker images -a'
+alias dv='docker volume ls'
+alias dn='docker network ls'
+alias sprune='docker system prune'
+alias vprune='docker volume prune'
+alias prune='sprune; vprune'
+
+## Docker Swarm Aliases
+alias dstr='docker stack rm'
+alias dsls='docker service ls'
+alias dsp='docker service ps'
+alias dsl='docker service logs'
+alias dsr='docker service rm'
+
+#   ---------------------------------------
+#   11.  REMINDERS & NOTES
 #   ---------------------------------------
 
 #   remove_disk: spin down unneeded disk
