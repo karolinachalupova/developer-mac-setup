@@ -72,7 +72,6 @@ if [ "$PythonDeveloper" != "${PythonDeveloper#[Yy]}" ] ;then
     brew install ${PythonDeveloperToolList[@]}
     pyenv install 3.11.4
     pyenv global 3.11.4
-    brew tap azure/azd && brew install azd
 else
     echo No
 fi
@@ -260,7 +259,7 @@ MacApplicationToolList=(
     1274495053 # Microsoft To Do
     1295203466 # Microsoft Remote Desktop 10
     985367838 # Microsoft Outlook
-)
+)ß
 if [ "$MacApplication" != "${MacApplication#[Yy]}" ] ;then
     brew install mas
     mas install ${MacApplicationToolList[@]}
@@ -288,6 +287,11 @@ git config --global color.branch auto
 git config --global color.diff auto
 git config --global color.interactive auto
 git config --global color.status auto
+# aliases
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
 
 beginDeploy "############# ALIASES #############"
 beginDeploy "############# GIT ALIASES #############"
