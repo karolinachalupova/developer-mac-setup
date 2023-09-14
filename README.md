@@ -8,8 +8,6 @@ Set of Scripts and Documentation to setup Mac as Development Environment
 - Git client to clone this repository. If you do not have Git then you can simply download the repository.
 - Comment/Uncomment tools in the script per your need.
 
-Start with this Amazing .bash_profile [MAC OSX BASH PROFILE](https://natelandau.com/my-mac-osx-bash_profile/)
-
 # **Make sure Script have Execution Permission**
 ```
 chmod +x macSetup.sh
