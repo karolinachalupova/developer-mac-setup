@@ -1,0 +1,17 @@
+# main git account
+Host github.com
+  HostName github.com
+  User git
+  IdentifyFile ~/.ssh/id_ed25519
+
+# personal git account
+Host github.com-personal
+  Hostname github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519_personal
+
+# agno git account
+Host github.com-agno
+  Hostname github.com
+  Use git
+  IdendityFile ~/.ssh/id_ed25519_agno
