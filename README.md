@@ -33,6 +33,9 @@ git clone git@github.com-personal:karolinachalupova/developer-mac-setup.git
 cd ~/Projects/personal/developer-mac-setup
 chmod +x macSetup.sh
 ```
+```
+sudo chown kaja /usr/local/bin/
+```
 
 # **Execute Script to begin Setup**
 ```
