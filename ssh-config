@@ -2,7 +2,7 @@
 Host github.com
   HostName github.com
   User git
-  IdentifyFile ~/.ssh/id_ed25519
+  IdentityFile ~/.ssh/id_ed25519
 
 # personal git account
 Host github.com-personal
