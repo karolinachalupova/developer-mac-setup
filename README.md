@@ -50,6 +50,8 @@ The font downloads automatically.
 
 # **Manual steps**
 - select terminal Solarized Dark color preset: Iterm2 -> Settings -> Profiles -> Colors -> Color Presets ->  Solarized Dark
+- enable infinite scrolling in terminal: Iterm2 -> Settings -> Profiles -> Terminal -> Unlimited scrollback
+- add statusbar to terminal: Iterm2 -> Settings -> Profiles -> Sesstion -> Status bar enabled -> Configure Status Bar
 - turn off keyboard typing auto-corrections -> System Preferences -> Keyboard Settings -> Text Input -> Edit -> vsecko povypinat
 - mkdir ~/Pictures/Screenshots # automaticky se tam budou ukladat
 
