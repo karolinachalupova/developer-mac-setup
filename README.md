@@ -37,7 +37,7 @@ chmod +x macSetup.sh
 # **Execute Script to begin Setup**
 ```
 sudo -s
-./macSetup.sh -y
+yes | ./macSetup.sh
 ```
 
 ## **General Configurations & Aliases**
