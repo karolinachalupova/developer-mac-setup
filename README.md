@@ -42,6 +42,17 @@ sudo chown kaja /usr/local/bin/
 yes | ./macSetup.sh
 ```
 
+# **Terminal font**
+```
+yes | p10k configure
+```
+The font downloads automatically. 
+
+# **Manual steps**
+- select terminal Solarized Dark color preset: Iterm2 -> Settings -> Profiles -> Colors -> Color Presets ->  Solarized Dark
+- turn off keyboard typing auto-corrections -> System Preferences -> Keyboard Settings -> Text Input -> Edit -> vsecko povypinat
+- mkdir ~/Pictures/Screenshots # automaticky se tam budou ukladat
+
 ## **General Configurations & Aliases**
 - [x] Git Config
 - [x] Global Git Ignore
