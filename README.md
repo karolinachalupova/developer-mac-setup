@@ -2,6 +2,27 @@
 Set of Scripts and Documentation to setup Mac as Development Environment
 
 
+# **SSH setup**
+```
+mkdir ~/.ssh 
+sh -c 'curl -s https://raw.githubusercontent.com/karolinachalupova/developer-mac-setup/master/ssh-config >> ~/.ssh/config'
+ssh-keygen -t ed25519 -C "your_email@example.com" # nagenerovat ke vsem uctum z configu a ulozit pod ~/.ssh/ed25519_<SUFFIX> se suffixem podle configu
+eval "$(ssh-agent -s)"
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519_<SUFFIX> # pro vsechny ucty z configu
+pbcopy < ~/.ssh/id_ed25519_<SUFFIX>.pub # pridat SSH klic v githubim Profile -> Settings -> SSH
+```
+# **Clone this repo**
+```
+mkdir ~/Projects
+cd ~/Projects
+mkdir personal
+cd personal
+git clone git@github.com-personal:karolinachalupova/developer-mac-setup.git
+```
+
+
+
+
 # **Prerequisite**
 - Make sure you have admin permission to execute the script to install all the development tools.
 - Bash
