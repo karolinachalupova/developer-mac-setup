@@ -31,6 +31,7 @@ git clone git@github.com-personal:karolinachalupova/developer-mac-setup.git
 
 # **Make sure Script has Execution Permission**
 ```
+cd ~/Projects/personal/developer-mac-setup
 chmod +x macSetup.sh
 ```
 
