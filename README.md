@@ -26,8 +26,7 @@ git clone git@github.com-personal:karolinachalupova/developer-mac-setup.git
 ```
 
 # **Prerequisite**
-- Make sure you have admin permission to execute the script to install all the development tools.
-- Comment/Uncomment tools in the script per your need.
+- Comment/Uncomment tools in the macSetup.sh script per your need.
 
 # **Make sure Script has Execution Permission**
 ```
@@ -37,7 +36,8 @@ chmod +x macSetup.sh
 
 # **Execute Script to begin Setup**
 ```
-./macSetup.sh
+sudo -s
+./macSetup.sh -y
 ```
 
 ## **General Configurations & Aliases**
