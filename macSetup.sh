@@ -63,6 +63,7 @@ read PythonDeveloper
 PythonDeveloperToolList=(
     pyenv 
     pyenv-virtualenv
+    poetry
     isort
     python-yq
 )
@@ -103,6 +104,7 @@ CaskDeveloperUtilitiesList=(
     dotnet-sdk
     wireshark
     iterm2
+    maccy
 )
 if [ "$DeveloperUtilities" != "${DeveloperUtilities#[Yy]}" ] ;then
     
@@ -139,8 +141,8 @@ echo -n "Do you wish to install IDEs (${bold}${green}y${reset}/${bold}${red}n${r
 read IDEs
 
 CaskIDEsList=(
-    #visual-studio-code
-    #android-studio
+    visual-studio-code
+    android-studio
 )
 if [ "$IDEs" != "${IDEs#[Yy]}" ] ;then
     echo Yes
@@ -158,24 +160,25 @@ read DevOps
 
 
 DevOpsToolList=(
-    terraform
-    vault
-    consul
-    nomad
-    packer
-    terragrunt
-    ansible
+    #terraform
+    #vault
+    #consul
+    #nomad
+    #packer
+    #terragrunt
+    #ansible
     awscli
     aws-sam-cli
-    kompose
+    #kompose
     kubernetes-cli
+    podman
 )
 CaskDevOpsToolList=(
-    vagrant
-    vmware-fusion
-    virtualbox
+    #vagrant
+    #vmware-fusion
+    #virtualbox
     docker
-    vagrant-manager
+    #vagrant-manager
     openlens
 )
 if [ "$DevOps" != "${DevOps#[Yy]}" ] ;then
@@ -215,13 +218,13 @@ read Productivity
 
 CaskProductivityToolList=(
     #slack
-    evernote
+    #evernote
     the-unarchiver
     dash
     gpg-suite
-    #microsoft-teams
+    microsoft-teams
     microsoft-office
-    #bitwarden
+    bitwarden
 )
 if [ "$Productivity" != "${Productivity#[Yy]}" ] ;then
     echo Yes
