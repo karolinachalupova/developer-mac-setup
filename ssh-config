@@ -13,5 +13,5 @@ Host github.com-personal
 # agno git account
 Host github.com-agno
   Hostname github.com
-  Use git
-  IdendityFile ~/.ssh/id_ed25519_agno
+  User git
+  IdentityFile ~/.ssh/id_ed25519_agno
