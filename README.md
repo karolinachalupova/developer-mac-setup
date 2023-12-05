@@ -36,7 +36,6 @@ chmod +x macSetup.sh
 
 # **Execute Script to begin Setup**
 ```
-sudo -s
 yes | ./macSetup.sh
 ```
 
