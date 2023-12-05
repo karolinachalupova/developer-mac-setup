@@ -11,6 +11,11 @@ eval "$(ssh-agent -s)"
 ssh-add --apple-use-keychain ~/.ssh/id_ed25519_<SUFFIX> # pro vsechny ucty z configu
 pbcopy < ~/.ssh/id_ed25519_<SUFFIX>.pub # pridat SSH klic v githubim Profile -> Settings -> SSH
 ```
+# **XCode**
+```
+xcode-select --install
+```
+
 # **Clone this repo**
 ```
 mkdir ~/Projects
@@ -20,23 +25,17 @@ cd personal
 git clone git@github.com-personal:karolinachalupova/developer-mac-setup.git
 ```
 
-
-
-
 # **Prerequisite**
 - Make sure you have admin permission to execute the script to install all the development tools.
-- Bash
-- Git client to clone this repository. If you do not have Git then you can simply download the repository.
 - Comment/Uncomment tools in the script per your need.
 
-# **Make sure Script have Execution Permission**
+# **Make sure Script has Execution Permission**
 ```
 chmod +x macSetup.sh
 ```
 
 # **Execute Script to begin Setup**
 ```
-xcode-select --install
 ./macSetup.sh
 ```
 
