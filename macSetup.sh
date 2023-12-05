@@ -15,7 +15,7 @@ reset=`tput sgr0`
 
 if test ! $(which brew); then
   echo "Installing homebrew..."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     brew install caskroom/cask/brew-cask
     brew tap homebrew/cask-versions
     brew tap homebrew/cask-cask
